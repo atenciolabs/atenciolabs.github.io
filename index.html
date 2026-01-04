@@ -11,6 +11,11 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
   
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  
   <title>Atencio Labs - Desenvolvimento e Inovação</title>
   
   <style>
@@ -22,19 +27,41 @@
     
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: #0a0e27;
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(75, 0, 130, 0.1) 0%, transparent 50%);
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       color: #fff;
-      padding: 20px;
+      padding: 40px 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Animated background lines */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(0, 191, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 191, 255, 0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+      opacity: 0.3;
+      z-index: 0;
     }
     
     .container {
-      max-width: 800px;
+      max-width: 1200px;
       width: 100%;
-      text-align: center;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
       animation: fadeIn 1s ease-in;
     }
     
@@ -48,164 +75,356 @@
         transform: translateY(0);
       }
     }
+
+    /* Header Section */
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
     
     .logo {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      letter-spacing: -1px;
+      height: auto;
+      max-width: 100px;
+      width: 100%;
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+      animation: fadeIn 1s ease-in;
+      display: block;
     }
     
     .tagline {
-      font-size: 1.3rem;
-      margin-bottom: 3rem;
+      font-size: 1.1rem;
       opacity: 0.95;
       font-weight: 300;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Connection lines */
+    .connection-line {
+      position: absolute;
+      background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.4), transparent);
+      height: 2px;
+      z-index: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .connection-line::before,
+    .connection-line::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: rgba(0, 191, 255, 0.8);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0 0 10px rgba(0, 191, 255, 0.8);
+    }
+
+    .connection-line::before {
+      left: 0;
+    }
+
+    .connection-line::after {
+      right: 0;
+    }
+
+    .line-1 {
+      top: 180px;
+      left: 50%;
+      width: 200px;
+      transform: translateX(-50%) rotate(-10deg);
+    }
+
+    .line-2 {
+      top: 550px;
+      left: 50%;
+      width: 300px;
+      transform: translateX(-50%);
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.4;
+      }
+      50% {
+        opacity: 0.8;
+      }
     }
     
+    /* Main Game Card */
     .game-card {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 2.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(138, 43, 226, 0.15);
+      backdrop-filter: blur(20px);
+      border-radius: 25px;
+      padding: 3rem;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .game-card::before {
+      content: 'A';
+      position: absolute;
+      bottom: -50px;
+      right: -50px;
+      font-size: 300px;
+      font-weight: 700;
+      color: rgba(138, 43, 226, 0.1);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .game-card-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
     }
     
     .game-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 12px 40px rgba(138, 43, 226, 0.4);
+    }
+
+    .game-title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 1.5rem;
     }
     
     .game-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 2.5rem;
       font-weight: 600;
+      margin: 0;
+      color: #fff;
+    }
+
+    .game-icon {
+      font-size: 2.5rem;
+      filter: drop-shadow(0 0 8px rgba(138, 43, 226, 0.6));
+      line-height: 1;
     }
     
     .game-description {
       font-size: 1.1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       opacity: 0.9;
-      line-height: 1.6;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.95);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
     .play-button {
       display: inline-block;
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      background: linear-gradient(90deg, #00bfff 0%, #ff69b4 100%);
       color: white;
-      padding: 1rem 2.5rem;
+      padding: 1.2rem 3rem;
       font-size: 1.2rem;
       font-weight: 600;
       text-decoration: none;
       border-radius: 50px;
-      box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+      box-shadow: 0 4px 20px rgba(0, 191, 255, 0.4);
       transition: all 0.3s ease;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .play-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .play-button:hover::before {
+      left: 100%;
     }
     
     .play-button:hover {
       transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(245, 87, 108, 0.6);
+      box-shadow: 0 6px 25px rgba(0, 191, 255, 0.6);
     }
     
     .play-button:active {
       transform: scale(0.98);
     }
     
+    /* Features Section */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
       margin-top: 3rem;
     }
     
     .feature {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(5px);
-      border-radius: 15px;
-      padding: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(138, 43, 226, 0.15);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
     }
     
     .feature-icon {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .feature-icon svg {
+      width: 60px;
+      height: 60px;
     }
     
     .feature-title {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+      color: #fff;
     }
     
     .feature-text {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       opacity: 0.85;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.5;
     }
     
     .footer {
-      margin-top: 3rem;
+      margin-top: 4rem;
+      text-align: center;
       opacity: 0.8;
       font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
     }
     
-    @media (max-width: 768px) {
+    @media (max-width: 968px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+
       .logo {
         font-size: 2.5rem;
       }
-      
-      .tagline {
-        font-size: 1.1rem;
+
+      .connection-line {
+        display: none;
       }
-      
+    }
+
+    @media (max-width: 768px) {
       .game-card {
         padding: 2rem 1.5rem;
       }
       
       .game-title {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
-      
-      .features {
-        grid-template-columns: 1fr;
+
+      .logo {
+        max-width: 300px;
+      }
+
+      .game-description {
+        font-size: 1rem;
+      }
+
+      .play-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
+  <div class="connection-line line-1"></div>
+  <div class="connection-line line-2"></div>
+
   <div class="container">
-    <h1 class="logo">Atencio Labs</h1>
-    <p class="tagline">Desenvolvimento de aplicativos e jogos inovadores</p>
+    <header class="header">
+      <div class="logo-container">
+        <img src="img/logo.png" alt="Atencio Labs" class="logo">
+      </div>
+      <p class="tagline">Desenvolvimento de aplicativos e jogos</p>
+    </header>
     
     <div class="game-card">
-      <h2 class="game-title">🎮 Memory Master</h2>
-      <p class="game-description">
-        Desafie sua memória com este jogo interativo! Teste suas habilidades com níveis progressivos do básico ao avançado. 
-        Quanto mais você joga, mais desafiador fica!
-      </p>
-      <a href="/memory-master/" class="play-button">Jogar Agora</a>
+      <div class="game-card-content">
+        <div class="game-title-container">
+          <div class="game-icon">🧠</div>
+          <h2 class="game-title">Memory Master</h2>
+        </div>
+        <p class="game-description">
+          Desafie sua memória com este jogo incrível! Teste suas habilidades com níveis progressivos do básico ao avançado.
+        </p>
+        <a href="/memory-master/" class="play-button">JOGAR AGORA</a>
+      </div>
     </div>
     
     <div class="features">
       <div class="feature">
-        <div class="feature-icon">🚀</div>
+        <div class="feature-icon">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 15 L30 45 L70 45 Z" fill="#FF4444"/>
+            <rect x="45" y="45" width="10" height="40" fill="#FF4444"/>
+            <rect x="35" y="75" width="30" height="5" rx="2" fill="#FF4444"/>
+            <path d="M50 30 L50 25 M50 50 L50 45" stroke="#FF4444" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="50" cy="20" r="3" fill="#FFFFFF"/>
+          </svg>
+        </div>
         <div class="feature-title">Inovação</div>
         <div class="feature-text">Projetos modernos e tecnológicos</div>
       </div>
       <div class="feature">
-        <div class="feature-icon">🎯</div>
+        <div class="feature-icon">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="35" stroke="#FF4444" stroke-width="4" fill="none"/>
+            <circle cx="50" cy="50" r="25" stroke="#FF4444" stroke-width="3" fill="none"/>
+            <circle cx="50" cy="50" r="15" fill="#FF4444"/>
+            <path d="M50 15 L50 45 M50 55 L50 85" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
         <div class="feature-title">Qualidade</div>
         <div class="feature-text">Desenvolvimento de alta qualidade</div>
       </div>
       <div class="feature">
-        <div class="feature-icon">💡</div>
+        <div class="feature-icon">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 20 L40 50 L30 50 L45 65 L35 85 L50 70 L65 85 L55 65 L70 50 L60 50 Z" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
+            <circle cx="50" cy="50" r="5" fill="#FFA500"/>
+            <rect x="47" y="35" width="6" height="8" rx="1" fill="#FFD700"/>
+          </svg>
+        </div>
         <div class="feature-title">Criatividade</div>
-        <div class="feature-text">Soluções criativas e únicas</div>
+        <div class="feature-text">Soluções </div>
       </div>
     </div>
     
