@@ -195,6 +195,28 @@
       z-index: 1;
       text-align: center;
     }
+
+    .game-image-container {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .game-image {
+      max-width: 100%;
+      height: auto;
+      max-height: 300px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.3));
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .game-card:hover .game-image {
+      transform: scale(1.02);
+      filter: drop-shadow(0 0 25px rgba(138, 43, 226, 0.5));
+    }
     
     .game-card:hover {
       transform: translateY(-5px);
@@ -362,6 +384,10 @@
         padding: 1rem 2rem;
         font-size: 1rem;
       }
+
+      .game-image {
+        max-height: 200px;
+      }
     }
   </style>
 </head>
@@ -379,6 +405,9 @@
     
     <div class="game-card">
       <div class="game-card-content">
+        <div class="game-image-container">
+          <img src="img/games/memory-master.png" alt="Memory Master" class="game-image">
+        </div>
         <div class="game-title-container">
           <div class="game-icon">🧠</div>
           <h2 class="game-title">Memory Master</h2>
