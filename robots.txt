@@ -1,0 +1,17 @@
+# robots.txt for https://atenciolabs.com
+# Allow crawling only for the site root and /memory-master; block other paths.
+User-agent: *
+Disallow: /
+Allow: /$
+Allow: /index.html
+Allow: /memory-master
+Allow: /memory-master/
+
+# Sitemap and host
+Sitemap: https://atenciolabs.com/sitemap.xml
+Host: atenciolabs.com
+
+# Notes:
+# - `Disallow: /` blocks everything by default; `Allow` lines make exceptions.
+# - `/$` attempts to allow only the root URL; some crawlers may treat it differently.
+# - If you want all subpaths under root accessible, replace `Disallow: /` with `Disallow:`.
