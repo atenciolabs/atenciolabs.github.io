@@ -164,13 +164,20 @@
       }
     }
     
+    /* Games Container */
+    .games-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
     /* Main Game Card */
     .game-card {
       background: rgba(138, 43, 226, 0.15);
       backdrop-filter: blur(20px);
       border-radius: 25px;
       padding: 3rem;
-      margin-bottom: 40px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.1);
       position: relative;
@@ -284,6 +291,12 @@
       color: rgba(255, 255, 255, 0.7);
     }
     
+    @media (max-width: 1200px) {
+      .games-container {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      }
+    }
+
     @media (max-width: 968px) {
       .logo {
         font-size: 2.5rem;
@@ -292,9 +305,18 @@
       .connection-line {
         display: none;
       }
+
+      .games-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
     }
 
     @media (max-width: 768px) {
+      .games-container {
+        gap: 25px;
+      }
+
       .game-card {
         padding: 2rem 1.5rem;
       }
@@ -312,6 +334,20 @@
         max-height: 200px;
       }
     }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 20px 15px;
+      }
+
+      .games-container {
+        gap: 20px;
+      }
+
+      .game-card {
+        padding: 1.5rem 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -326,15 +362,29 @@
       <p class="tagline">Laboratórios de aplicativos e jogos. Teste e seja testado!</p>
     </header>
     
-    <div class="game-card">
-      <div class="game-card-content">
-        <div class="game-image-container">
-          <img src="img/games/memory-master.png" alt="Memory Master" class="game-image">
+    <div class="games-container">
+      <div class="game-card">
+        <div class="game-card-content">
+          <div class="game-image-container">
+            <img src="https://atenciolabs.com/memory-master/game.png" alt="Memory Master" class="game-image">
+          </div>
+          <p class="game-description">
+            Treine seu cérebro nesse laboratório. Melhore sua retenção visual e aumente seu QI com desafios progressivos. Ou então simplesmente relaxe com o modo casual.
+          </p>
+          <a href="https://atenciolabs.com/memory-master/" class="play-button">JOGAR AGORA</a>
         </div>
-        <p class="game-description">
-          Treine seu cérebro nesse laboratório. Melhore sua retenção visual e aumente seu QI com desafios progressivos. Ou então simplesmente relaxe com o modo casual.
-        </p>
-        <a href="/memory-master/" class="play-button">JOGAR AGORA</a>
+      </div>
+      
+      <div class="game-card">
+        <div class="game-card-content">
+          <div class="game-image-container">
+            <img src="https://atenciolabs.com/15-puzzle/game.png" alt="15 Puzzle" class="game-image">
+          </div>
+          <p class="game-description">
+            Clássico jogo de quebra-cabeça. Com tabuleiros de 3x3, 4x4, 5x5 e 6x6. Ou então utilize uma imagem personalizada para se divertir.
+          </p>
+          <a href="https://atenciolabs.com/15-puzzle/" class="play-button">JOGAR AGORA</a>
+        </div>
       </div>
     </div>
     
