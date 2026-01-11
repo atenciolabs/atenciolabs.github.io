@@ -1,17 +1,18 @@
-# robots.txt for https://atenciolabs.com
-# Allow crawling only for the site root, /memory-master, /15-puzzle, and /privacidade.html
 User-agent: *
-Disallow: /
-Allow: /$
-Allow: /index.html
-Allow: /memory-master
+
+# 1. Permite o acesso geral para carregar CSS, JS e imagens
+Allow: /
+
+# 2. Bloqueia o acesso dos robôs às URLs específicas do jogo
+Disallow: /memory-master/game/
+Disallow: /memory-master/game
+Disallow: /15-puzzle/game/
+Disallow: /15-puzzle/game
+
+# 3. Garante que as páginas principais continuem permitidas
 Allow: /memory-master/
-Allow: /15-puzzle
 Allow: /15-puzzle/
 Allow: /privacidade.html
 
 # Sitemap
 Sitemap: https://atenciolabs.com/sitemap.xml
-
-# Notes:
-# - `Disallow: /` blocks everything by default; `Allow` lines make exceptions.
