@@ -13,6 +13,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://atenciolabs.com/15-puzzle/</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://atenciolabs.com/privacidade.html</loc>
     <lastmod>2026-01-10</lastmod>
     <changefreq>yearly</changefreq>

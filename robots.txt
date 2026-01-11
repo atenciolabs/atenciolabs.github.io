@@ -1,11 +1,13 @@
 # robots.txt for https://atenciolabs.com
-# Allow crawling only for the site root, /memory-master, and /privacidade.html
+# Allow crawling only for the site root, /memory-master, /15-puzzle, and /privacidade.html
 User-agent: *
 Disallow: /
 Allow: /$
 Allow: /index.html
 Allow: /memory-master
 Allow: /memory-master/
+Allow: /15-puzzle
+Allow: /15-puzzle/
 Allow: /privacidade.html
 
 # Sitemap
@@ -13,5 +15,3 @@ Sitemap: https://atenciolabs.com/sitemap.xml
 
 # Notes:
 # - `Disallow: /` blocks everything by default; `Allow` lines make exceptions.
-# - Allowed paths: root (/), index.html, /memory-master (with and without trailing slash), and /privacidade.html
-# - Other paths are blocked from crawling
