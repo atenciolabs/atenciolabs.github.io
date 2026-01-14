@@ -1,5 +1,7 @@
 User-agent: *
 
+Content-signal: search=yes,ai-train=no
+
 # 1. Permite o acesso geral para carregar CSS, JS e imagens
 Allow: /
 
