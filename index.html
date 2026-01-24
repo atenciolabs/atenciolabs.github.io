@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Atencio Labs - Desenvolvimento de aplicativos e jogos inovadores. Conheça nossos projetos e jogos interativos.">
+  <meta name="description"
+    content="Atencio Labs - Desenvolvimento de aplicativos e jogos inovadores. Conheça nossos projetos e jogos interativos.">
   <meta name="keywords" content="Atencio Labs, desenvolvimento, jogos, aplicativos, Flutter">
   <meta name="author" content="Atencio Labs">
 
@@ -13,27 +15,29 @@
   <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 
   <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" sizes="any"/>
-  
+  <link rel="icon" href="favicon.ico" sizes="any" />
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Poppins:wght@600;700;800&display=swap"
+    rel="stylesheet">
 
 
   <title>Atencio Labs | Laboratório de Jogos e Apps Inovadores</title>
-  
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       background: #0a0e27;
-      background-image: 
+      background-image:
         radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 40% 20%, rgba(75, 0, 130, 0.1) 0%, transparent 50%);
@@ -52,7 +56,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: 
+      background-image:
         linear-gradient(rgba(0, 191, 255, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 191, 255, 0.1) 1px, transparent 1px);
       background-size: 50px 50px;
@@ -60,7 +64,7 @@
       opacity: 0.3;
       z-index: 0;
     }
-    
+
     .container {
       max-width: 1200px;
       width: 100%;
@@ -69,12 +73,13 @@
       z-index: 1;
       animation: fadeIn 1s ease-in;
     }
-    
+
     @keyframes fadeIn {
       from {
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -94,7 +99,7 @@
       justify-content: center;
       margin-bottom: 15px;
     }
-    
+
     .logo {
       height: auto;
       max-width: 100px;
@@ -103,7 +108,7 @@
       animation: fadeIn 1s ease-in;
       display: block;
     }
-    
+
     .tagline {
       font-size: 1.1rem;
       opacity: 0.95;
@@ -156,14 +161,17 @@
     }
 
     @keyframes pulse {
-      0%, 100% {
+
+      0%,
+      100% {
         opacity: 0.4;
       }
+
       50% {
         opacity: 0.8;
       }
     }
-    
+
     /* Games Container */
     .games-container {
       display: grid;
@@ -224,13 +232,13 @@
       transform: scale(1.02);
       filter: drop-shadow(0 0 25px rgba(138, 43, 226, 0.5));
     }
-    
+
     .game-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 40px rgba(138, 43, 226, 0.4);
     }
 
-    
+
     .game-description {
       font-size: 1.1rem;
       margin-bottom: 2rem;
@@ -241,7 +249,7 @@
       margin-left: auto;
       margin-right: auto;
     }
-    
+
     .play-button {
       display: inline-block;
       background: linear-gradient(90deg, #00bfff 0%, #ff69b4 100%);
@@ -273,16 +281,16 @@
     .play-button:hover::before {
       left: 100%;
     }
-    
+
     .play-button:hover {
       transform: scale(1.05);
       box-shadow: 0 6px 25px rgba(0, 191, 255, 0.6);
     }
-    
+
     .play-button:active {
       transform: scale(0.98);
     }
-    
+
     .footer {
       margin-top: 4rem;
       text-align: center;
@@ -290,7 +298,7 @@
       font-size: 0.9rem;
       color: rgba(255, 255, 255, 0.7);
     }
-    
+
     @media (max-width: 1200px) {
       .games-container {
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -374,6 +382,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="connection-line line-1"></div>
   <div class="connection-line line-2"></div>
@@ -385,7 +394,7 @@
       </div>
       <p class="tagline">Laboratórios de aplicativos e jogos. Teste e seja testado!</p>
     </header>
-    
+
     <div class="games-container">
       <div class="game-card">
         <div class="game-card-content">
@@ -393,28 +402,45 @@
             <img src="https://atenciolabs.com/memory-master/game.webp" alt="Memory Master" class="game-image">
           </div>
           <p class="game-description">
-            Treine seu cérebro nesse laboratório. Melhore sua retenção visual e aumente seu QI com desafios progressivos. Ou então simplesmente relaxe com o modo casual.
+            Treine seu cérebro nesse laboratório. Melhore sua retenção visual e aumente seu QI com desafios
+            progressivos. Ou então simplesmente relaxe com o modo casual.
           </p>
           <a href="https://atenciolabs.com/memory-master/" class="play-button">JOGAR AGORA</a>
         </div>
       </div>
-      
+
+      <div class="game-card">
+        <div class="game-card-content">
+          <div class="game-image-container">
+            <img src="https://atenciolabs.com/harvest-tile/game.webp" alt="Harvest Tile" class="game-image">
+          </div>
+          <p class="game-description">
+            Um jogo de combinar peças para colher frutas. Combine peças iguais para colher frutas e
+            ganhe pontos. Cuidado com o tempo e com as peças especiais.
+          </p>
+          <a href="https://atenciolabs.com/harvest-tile/" class="play-button">JOGAR AGORA (em desenvolvimento)</a>
+        </div>
+      </div>
+
       <div class="game-card">
         <div class="game-card-content">
           <div class="game-image-container">
             <img src="https://atenciolabs.com/15-puzzle/game.webp" alt="15 Puzzle" class="game-image">
           </div>
           <p class="game-description">
-            Clássico jogo de quebra-cabeça. Com tabuleiros de 3x3, 4x4, 5x5 e 6x6. Ou então utilize uma imagem personalizada para se divertir.
+            Clássico jogo de quebra-cabeça. Com tabuleiros de 3x3, 4x4, 5x5 e 6x6. Ou então utilize uma imagem
+            personalizada para se divertir.
           </p>
           <a href="https://atenciolabs.com/15-puzzle/" class="play-button">JOGAR AGORA</a>
         </div>
       </div>
     </div>
-    
+
     <div class="footer">
-      <p>&copy; 2026 Atencio Labs. Todos os direitos reservados. — <a href="/privacidade.html">Política de Privacidade</a></p>
+      <p>&copy; 2026 Atencio Labs. Todos os direitos reservados. — <a href="/privacidade.html">Política de
+          Privacidade</a></p>
     </div>
   </div>
 </body>
+
 </html>
